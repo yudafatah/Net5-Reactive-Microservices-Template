@@ -1,9 +1,10 @@
-﻿using Template.DTO;
+﻿using System.Threading.Tasks;
+using Template.Dtos;
 
 namespace Template.Repositories.Interfaces
 {
     public interface IOrderDetailsProvider
     {
-        OrderDetail[] Get();
+        Task<string> CancelOrder(int id, string reason, int cencelledBy);
     }
 }
