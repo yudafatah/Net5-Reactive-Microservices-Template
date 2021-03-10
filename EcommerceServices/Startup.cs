@@ -8,9 +8,6 @@ using Microsoft.OpenApi.Models;
 using Plain.RabbitMQ;
 using RabbitMQ.Client;
 using System;
-using System.IO;
-using System.Reflection;
-using Template.Dtos;
 using Template.Repositories.Implementation;
 using Template.Repositories.Interfaces;
 
@@ -33,9 +30,9 @@ namespace Template
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { 
-                    Title = "Template Reactive Microservices with MediatR & CQRS", 
+                    Title = "Ecommerce Service", 
                     Version = "v1",
-                    Description = "An example of using .NET 5 as reactive microservices",
+                    Description = "Template Reactive Microservices with MediatR & CQRS",
                     Contact = new OpenApiContact
                     {
                         Name = "Yuda Fatah",
@@ -57,10 +54,11 @@ namespace Template
             // register MediatR services
             services.AddMediatR(typeof(Startup));
 
-            // register order detail repo and assign connection
+            // register repo and assign connection
             var connectionString = Configuration["ConnectionString"];
-            services.AddSingleton<IOrderDetailsProvider>(new OrderDetailsProvider(connectionString));
-            services.AddSingleton<IRepository<OrderDetail,OrderDto>>(new OrderDetailsProvider(connectionString));
+            services.AddSingleton<IInventoryProvider>(new InventoryProvider(connectionString));
+            services.AddSingleton<IProductProvider>(new ProductProvider(connectionString));
+            services.AddSingleton<IInventoryUpdator>(new InventoryUpdator(connectionString));
 
             // register plain rabbit mq services
             services.AddSingleton<IConnectionProvider>(new ConnectionProvider("amqp://yudafatah:semen1976@localhost:5672"));
@@ -81,7 +79,7 @@ namespace Template
 
             app.UseStaticFiles();
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SourceGenerator_MediatR_CQRS v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ecommerce v1"));
 
             app.UseHttpsRedirection();
 

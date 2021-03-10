@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Template.DTO;
+using TemplateReport.Dtos;
 using TemplateReport.Services;
 
 namespace TemplateReport.Handlers
@@ -32,7 +33,19 @@ namespace TemplateReport.Handlers
         {
             if (message.Contains("Product"))
             {
-
+                var product = JsonConvert.DeserializeObject<ProductDto>(message);
+                if (memoryReportStorage.Get().Any(x => x.ProductName.Equals(product.ProductName)))
+                {
+                    return true;
+                }
+                else
+                {
+                    memoryReportStorage.Add(new DTO.Report
+                    {
+                        ProductName = product.ProductName,
+                        Count = DEFAULT_QUANTITY
+                    });
+                }
             }
             else
             {

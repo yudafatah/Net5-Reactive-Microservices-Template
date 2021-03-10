@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiControllerGenerator", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceGenerator", "SourceGenerator\SourceGenerator.csproj", "{9B7732C4-D4BB-4583-8460-A5CAA5022ADC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EcommerceServices", "EcommerceServices", "{BC9D20E0-9793-4B40-BC25-323AF3016F94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template", "EcommerceServices\Template.csproj", "{86BED4C3-0561-4DD6-9D85-1F943C347E5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{9B7732C4-D4BB-4583-8460-A5CAA5022ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B7732C4-D4BB-4583-8460-A5CAA5022ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B7732C4-D4BB-4583-8460-A5CAA5022ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86BED4C3-0561-4DD6-9D85-1F943C347E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86BED4C3-0561-4DD6-9D85-1F943C347E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86BED4C3-0561-4DD6-9D85-1F943C347E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86BED4C3-0561-4DD6-9D85-1F943C347E5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,8 @@ Global
 		{4A32B508-3D4C-45D2-B595-E2E88883D169} = {9C3006A9-7D8B-4EC8-8428-2D3C0195AD5C}
 		{FEA12AC0-F0D9-41D7-A493-7848E5030584} = {4A32B508-3D4C-45D2-B595-E2E88883D169}
 		{9B7732C4-D4BB-4583-8460-A5CAA5022ADC} = {A5FD4FEF-5B6C-44DD-B109-BA63FF41757D}
+		{BC9D20E0-9793-4B40-BC25-323AF3016F94} = {9C3006A9-7D8B-4EC8-8428-2D3C0195AD5C}
+		{86BED4C3-0561-4DD6-9D85-1F943C347E5F} = {BC9D20E0-9793-4B40-BC25-323AF3016F94}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E61747F-4AC2-4BAC-ADD9-873EAABA2039}

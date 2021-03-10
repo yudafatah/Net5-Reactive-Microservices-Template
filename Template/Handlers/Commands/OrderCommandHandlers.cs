@@ -31,7 +31,7 @@ namespace Template.Handlers.Commands
                 User = request.Username
             }), "report.order", null);
 
-            throw new NotImplementedException();
+            return Task.FromResult("Created");
         }
 
         public Task<string> Handle(CancelOrder request, CancellationToken cancellationToken)
