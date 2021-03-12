@@ -1,3 +1,4 @@
+using Confluent.Kafka;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -66,6 +67,11 @@ namespace Template
                "report_exchange",
                ExchangeType.Topic
                ));
+
+            // register kafka producer
+            var producerConf = new ProducerConfig();
+            Configuration.Bind("Producer", producerConf);
+            services.AddSingleton<ProducerConfig>(producerConf);
 
         }
 

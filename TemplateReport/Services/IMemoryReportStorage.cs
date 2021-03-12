@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Template.Dtos;
 using TemplateReport.DTO;
 
 namespace TemplateReport.Services
@@ -7,5 +8,6 @@ namespace TemplateReport.Services
     {
         void Add(Report report);
         IEnumerable<Report> Get();
+        IEnumerable<InventUpdateDto> GetInvent();
     }
 }
