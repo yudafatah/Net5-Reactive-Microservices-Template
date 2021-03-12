@@ -22,5 +22,5 @@ kafka> .\bin\windows\kafka-server-start.bat .\config\server.properties
 .\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic EcommTopic
 #### Create Publisher
 .\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic EcommTopic
-####Create Consumer
+#### Create Consumer
 .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic EcommTopic --from-beginning
