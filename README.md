@@ -1,6 +1,17 @@
 # Net5-Reactive-Microservices-Template
 Reactive Microservice Template for e-commerce written in Net 5
 
+## Tech Stack:
+
+RabbitMQ
+Kafka
+MediatR
+CQRS Pattern
+Sql Server
+Dapper
+Swagger / OpenApi
+Source Generator to generate Api Controller based on record in MediatR
+
 ## Kafka Setup
 #### Start Zookeeper
 kafka> .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
